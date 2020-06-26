@@ -1,0 +1,14 @@
+{
+    "id": "newsletter",
+    "name": "Newsletter",
+    "description": "Newsletter Plugin for Azuriom",
+    "version": "0.0.1",
+    "url": "https://skitdev.icu",
+    "authors": [
+        "SkitDev"
+    ],
+    "providers": [
+        "\\Azuriom\\Plugin\\Newsletter\\Providers\\NewsletterServiceProvider",
+        "\\Azuriom\\Plugin\\Newsletter\\Providers\\RouteServiceProvider"
+    ]
+}

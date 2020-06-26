@@ -1,0 +1,13 @@
+{
+    "name": "azuriom/newsletter",
+    "type": "azuriom-plugin",
+    "description": "Plugin for Azuriom",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\Newsletter\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
