@@ -25,7 +25,7 @@ class AdminController extends Controller
         $data = (object) [];
         $data->title = $request->title;
         $data->content = $request->content;
-        Mail::cc(User::all())
+        Mail::bcc(User::all())
             ->queue(new Newsletter($data));
         return redirect('/admin')->with('success', "Email successfully sent !");
     }
