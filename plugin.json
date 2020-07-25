@@ -2,7 +2,7 @@
     "id": "newsletter",
     "name": "Newsletter",
     "description": "Newsletter Plugin for Azuriom",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "url": "https://skitdev.icu",
     "authors": [
         "SkitDev"
