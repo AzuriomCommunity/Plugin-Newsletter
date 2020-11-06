@@ -3,6 +3,7 @@
 namespace Azuriom\Plugin\Newsletter\Providers;
 
 use Azuriom\Extensions\Plugin\BasePluginServiceProvider;
+use Azuriom\Models\Permission;
 
 class NewsletterServiceProvider extends BasePluginServiceProvider
 {
@@ -73,7 +74,7 @@ class NewsletterServiceProvider extends BasePluginServiceProvider
 
         $this->registerUserNavigation();
 
-        //
+        Permission::registerPermissions(['allow_newsletter' => 'Permet d\'accéder à la page pour envoyer la newsletter']);
     }
 
     /**
@@ -99,7 +100,8 @@ class NewsletterServiceProvider extends BasePluginServiceProvider
             'newsletter' => [
                 'name' => 'newsletter::admin.nav.title',
                 'icon' => 'fas fa-envelope',
-                'route' => 'newsletter.admin.send'
+                'route' => 'newsletter.admin.send',
+                'permission' => 'allow_newsletter'
             ],
         ];
     }

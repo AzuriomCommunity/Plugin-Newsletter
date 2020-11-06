@@ -15,18 +15,25 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('newsletter::admin.index');
+        if($request->user()->hasPermission("allow_newsletter"))
+            return view('newsletter::admin.index');
+        else
+            return redirect("/admin")->with('error', "You don't have access to this page.");
     }
 
     public function sender(Request $request)
     {
+        if($request->user()->hasPermission("allow_newsletter")){
         $data = (object) [];
         $data->title = $request->title;
         $data->content = $request->content;
         Mail::bcc(User::all())
             ->queue(new Newsletter($data));
         return redirect('/admin')->with('success', "Email successfully sent !");
+        }
+        else
+            return redirect("/admin")->with('error', "You don't have access to this route.");
     }
 }
