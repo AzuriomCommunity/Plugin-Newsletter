@@ -12,7 +12,7 @@ class NewsletterServiceProvider extends BasePluginServiceProvider
      *
      * @var array
      */
-    protected $middleware = [
+    protected array $middleware = [
         // \Azuriom\Plugin\Newsletter\Middleware\ExampleMiddleware::class,
     ];
 
@@ -21,14 +21,14 @@ class NewsletterServiceProvider extends BasePluginServiceProvider
      *
      * @var array
      */
-    protected $middlewareGroups = [];
+    protected array $middlewareGroups = [];
 
     /**
      * The plugin's route middleware.
      *
      * @var array
      */
-    protected $routeMiddleware = [
+    protected array $routeMiddleware = [
         // 'example' => \Azuriom\Plugin\Newsletter\Middleware\ExampleRouteMiddleware::class,
     ];
 
@@ -37,7 +37,7 @@ class NewsletterServiceProvider extends BasePluginServiceProvider
      *
      * @var array
      */
-    protected $policies = [
+    protected array $policies = [
         // User::class => UserPolicy::class,
     ];
 
@@ -98,10 +98,10 @@ class NewsletterServiceProvider extends BasePluginServiceProvider
     {
         return [
             'newsletter' => [
-                'name' => 'newsletter::admin.nav.title',
-                'icon' => 'fas fa-envelope',
-                'route' => 'newsletter.admin.send',
-                'permission' => 'allow_newsletter'
+                'name' => trans('newsletter::admin.nav.title'),
+                'icon' => trans('bi bi-envelope-fill'),
+                'route' => trans('newsletter.admin.send'),
+                'permission' => trans('allow_newsletter')
             ],
         ];
     }
@@ -113,8 +113,6 @@ class NewsletterServiceProvider extends BasePluginServiceProvider
      */
     protected function userNavigation()
     {
-        return [
-
-        ];
+        return [];
     }
 }
