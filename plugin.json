@@ -2,12 +2,14 @@
     "id": "newsletter",
     "name": "Newsletter",
     "apiId": 25,
-    "description": "Newsletter Plugin for Azuriom",
-    "version": "0.0.3",
+    "description": "Updated Newsletter Plugin for Azuriom",
+    "version": "1.0.0",
     "url": "https://skitdev.icu",
     "authors": [
-        "SkitDev"
+        "SkitDev",
+        "Fire_Link"
     ],
+    "azuriom_api": "1.0.0",
     "providers": [
         "\\Azuriom\\Plugin\\Newsletter\\Providers\\NewsletterServiceProvider",
         "\\Azuriom\\Plugin\\Newsletter\\Providers\\RouteServiceProvider"
